@@ -1,10 +1,10 @@
-.container{
+.container-doj{
     display: flex;
     margin-top: 10px;
 }
 
 
-.link{
+.link-doj{
     text-decoration: none;
     color: inherit;
 }

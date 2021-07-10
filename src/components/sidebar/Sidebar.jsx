@@ -22,7 +22,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/" className="link-doj">
               <li className="sidebarListItem active">
                 <LineStyle className="sidebarIcon" />
                 Home
@@ -41,13 +41,13 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <Link to="/users" className="link">
+            <Link to="/addfood" className="link-doj">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Add Food
               </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/restaurants" className="link-doj">
               <li className="sidebarListItem">
                 <ColorizeIcon className="sidebarIcon" />
                 All Restaurants
