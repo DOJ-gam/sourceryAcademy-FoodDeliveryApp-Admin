@@ -1,0 +1,21 @@
+// import Chart from "../../components/chart/Chart";
+import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
+import "./home.css";
+
+
+export default function Home() {
+  return (
+    <div className="home">
+      <FeaturedInfo />
+      {/* <Chart
+        data={userData}
+        title="Infected People Analytics"
+        grid
+        dataKey="Active User"
+      /> */}
+      <div className="homeWidgets">
+        
+      </div>
+    </div>
+  );
+}
