@@ -25,17 +25,19 @@ export default function Sidebar() {
             <Link to="/" className="link-doj">
               <li className="sidebarListItem active">
                 <LineStyle className="sidebarIcon" />
-                Home
+                Dashboard
               </li>
             </Link>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Sales
             </li>
+            <Link to="/orders" className="link-doj">
             <li className="sidebarListItem">
               <LocalHospitalIcon className="sidebarIcon" />
-              All Foods
+              Orders
             </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -50,7 +52,7 @@ export default function Sidebar() {
             <Link to="/restaurants" className="link-doj">
               <li className="sidebarListItem">
                 <ColorizeIcon className="sidebarIcon" />
-                All Restaurants
+                  Restaurants
               </li>
             </Link>
             <li className="sidebarListItem">
