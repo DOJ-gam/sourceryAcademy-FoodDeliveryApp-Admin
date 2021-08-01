@@ -14,6 +14,7 @@ import {
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import ColorizeIcon from "@material-ui/icons/Colorize";
 import { Link } from "react-router-dom";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 
 export default function Sidebar() {
   return (
@@ -24,7 +25,7 @@ export default function Sidebar() {
           <ul className="sidebarList">
             <Link to="/" className="link-doj">
               <li className="sidebarListItem active">
-                <LineStyle className="sidebarIcon" />
+                <DashboardIcon className="sidebarIcon" />
                 Dashboard
               </li>
             </Link>
@@ -33,10 +34,10 @@ export default function Sidebar() {
               Sales
             </li>
             <Link to="/orders" className="link-doj">
-            <li className="sidebarListItem">
-              <LocalHospitalIcon className="sidebarIcon" />
-              Orders
-            </li>
+              <li className="sidebarListItem">
+                <LocalHospitalIcon className="sidebarIcon" />
+                Orders
+              </li>
             </Link>
           </ul>
         </div>
@@ -52,13 +53,29 @@ export default function Sidebar() {
             <Link to="/restaurants" className="link-doj">
               <li className="sidebarListItem">
                 <ColorizeIcon className="sidebarIcon" />
-                  Restaurants
+                Restaurants
               </li>
             </Link>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Total Sales
-            </li>
+            <Link to="/category" className="link-doj">
+              <li className="sidebarListItem">
+                <AttachMoney className="sidebarIcon" />
+                Category
+              </li>
+            </Link>
+            <Link to="#" className="link-doj collapsed" data-toggle="collapse" data-target="#collapsseProducts" aria-expanded="false">
+              <li className="sidebarListItem">
+                <AttachMoney className="sidebarIcon" />
+                Products
+                <div className="sb-sidenav-collapse-arrow"><i className=" ml-3 fas fa-angle-down"></i></div>
+              </li>
+            </Link>
+            <div className="collapse" id="collapsseProducts" aria-labelledby="HeadingOne" data-parent="sidenavAccordion">
+              <nav className="sb-sidenav-menu-nested d-flex flex-column">
+                <Link className="pl-5 link-doj" to="/addfood">Add Food</Link>
+                <Link className="pl-5 link-doj" to="/viewfood">Show food</Link>
+              </nav>
+            </div>
+
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
               Reports

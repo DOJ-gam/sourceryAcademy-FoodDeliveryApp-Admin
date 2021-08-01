@@ -3,11 +3,11 @@ import {Restaurant} from '@material-ui/icons'
 
 export default function Orders() {
   return (
-    <div className="container">
+    <div className="container-fluid orders-container">
 
         <h1 className="display-4 text-center">List of Orders</h1>
 
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Order ID</th>
@@ -26,8 +26,8 @@ export default function Orders() {
             <td>Omar Jeng</td>
             <td>450</td>
             <td>
-                <button className="btn btn-info">Confirm</button>
-                <button className="btn btn-danger">Cancel</button>
+                <button className="btn btn-info d-inline-block mr-2">Confirm</button>
+                <button className="btn btn-danger ">Cancel</button>
             </td>
           </tr>
           <tr>
@@ -37,8 +37,8 @@ export default function Orders() {
             <td>Omar Jeng</td>
             <td>450</td>
             <td>
-                <button className="btn btn-info">Confirm</button>
-                <button className="btn btn-danger">Cancel</button>
+                <button className="btn btn-info d-inline-block mr-2">Confirm</button>
+                <button className="btn btn-danger ">Cancel</button>
             </td>
           </tr>
           <tr>
@@ -48,8 +48,8 @@ export default function Orders() {
             <td>Omar Jeng</td>
             <td>450</td>
             <td>
-                <button className="btn btn-info">Confirm</button>
-                <button className="btn btn-danger">Cancel</button>
+                <button className="btn btn-info d-inline-block mr-2">Confirm</button>
+                <button className="btn btn-danger ">Cancel</button>
             </td>
           </tr>
           <tr>
@@ -59,7 +59,7 @@ export default function Orders() {
             <td>Omar Jeng</td>
             <td>450</td>
             <td>
-                <button className="btn btn-info">Confirm</button>
+                <button className="btn btn-info d-inline-block mr-2">Confirm</button>
                 <button className="btn btn-danger">Cancel</button>
             </td>
           </tr>
