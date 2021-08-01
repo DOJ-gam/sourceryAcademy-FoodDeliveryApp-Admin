@@ -2,7 +2,7 @@ import "./addFood.css";
 
 export default function AddFood() {
   return (
-    <div className="newProduct container">
+    <div className="newProduct container-fluid">
       <h1 className="display-4 text-center">New Food Item</h1>
       <form className="addProductForm">
         <div className="form-group">

@@ -2,7 +2,7 @@ import "./Restaurants.css";
 
 export default function Orders() {
   return (
-    <div className="container">
+    <div className="container-fluid p-5 ml-5 restaurant-container">
 
       <h1 className="display-4 text-center">Add New Restaurant</h1>
 
@@ -27,7 +27,7 @@ export default function Orders() {
 
         <h1 className="display-4 text-center">List of Restaurants</h1>
 
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
