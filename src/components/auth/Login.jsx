@@ -19,14 +19,28 @@ function Login(){
         setLogin({...loginInput, [e.target.name]: e.target.value});
     }
 
-    const loginSubmit = (e) => {
-        e.preventDefault();
+    const loginSubmit = async (e) => {
+         e.preventDefault();
+
+         let url = process.env.NODE_ENV === "development"?
+        process.env.REACT_APP_DEVELOPMENT_URL : 
+        process.env.REACT_APP_PRODUCTION_URL;
+        
+        // let res = await fetch(url +'Auth/Authenticate/',{
+        //     method: 'POST',
+        //     headers:{'Content-type':'application/json'},
+        //     body:JSON.stringify(loginInput),
+        //     credentials:'include'
+        // });
+        // let data = await res.json();
+        // console.log(data);
 
         const data = {
             email: loginInput.email,
             password: loginInput.password,
         }
-        axios.post(`http://127.0.0.1:8000/api/login`, data).then(res =>{
+        axios.post(url + 'Auth/Authenticate', data).then(res =>{
+            console.log(res);
             
             if(res.data.status === '200'){
                 localStorage.setItem('auth_token', res.data.token)
@@ -36,7 +50,7 @@ function Login(){
 
                     history.push('/');
                 }
-                else{
+                else{   
                     history.push('/404');   
                 }
             }
@@ -46,9 +60,12 @@ function Login(){
             else{
                 setLogin({...loginInput, error_list: res.data.validation_errors})
             }
-
-        })
+        
+         })
     }
+    // const handleInput = (event) => {
+    //     setUserData({...userData, [event.target.id]: event.target.value});
+    //   }
 
     return (
         <div>
