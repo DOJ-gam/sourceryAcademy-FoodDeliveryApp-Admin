@@ -6,11 +6,16 @@ import {useHistory} from 'react-router-dom'
 
 function Register(){
 
+    let url = process.env.NODE_ENV === "development"?
+    process.env.REACT_APP_DEVELOPMENT_URL : 
+    process.env.REACT_APP_PRODUCTION_URL;
+
     const history = useHistory();
     const [registerInput, setRegister] = useState({
-        name: '',
+        firsName: '',
+        lastName: '',
         email: '',
-        password: '',
+        password:'',
 
         error_list: [],
     });
@@ -21,38 +26,52 @@ function Register(){
         e.persist();
         setRegister({...registerInput, [e.target.name]: e.target.value})
     }
-    const registerSubmit = (e) =>{
+    // const registerSubmit = (e) =>{
+    //     e.preventDefault();
+
+    //     const data = {
+    //         name: registerInput.name,
+    //         email: registerInput.email,
+    //         password: registerInput.password
+    //     }
+    //     axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie').then(response => {
+    //         // Login...
+    //         axios.defaults.withCredentials = true;
+    //         axios.post(`http://127.0.0.1:8000/api/register`, data).then(res =>{
+    //     //   Note the the data.status is set manually in backend...
+    //         if (res.data.status === "200"){
+    //             localStorage.setItem('auth_token', res.data.token);
+    //             localStorage.setItem('auth_name', res.data.username);
+    //             // swal("Success", res.data.message, "success");
+    //             // collor, message, icon
+    //             swal({
+    //                 title: "Success!",
+    //                 text: res.data.message,
+    //                 icon: "success",
+    //               });
+    //             history.push('/');
+    //         }
+    //         else{
+    //             //validation_errors also from backend
+    //             setRegister({...registerInput, error_list: res.data.validation_errors});
+    //         }
+    //         });
+    //     });
+    // }
+
+    const registerSubmit = async (e)=>{
         e.preventDefault();
 
-        const data = {
-            name: registerInput.name,
-            email: registerInput.email,
-            password: registerInput.password
-        }
-        axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie').then(response => {
-            // Login...
-            axios.defaults.withCredentials = true;
-            axios.post(`http://127.0.0.1:8000/api/register`, data).then(res =>{
-        //   Note the the data.status is set manually in backend...
-            if (res.data.status === "200"){
-                localStorage.setItem('auth_token', res.data.token);
-                localStorage.setItem('auth_name', res.data.username);
-                // swal("Success", res.data.message, "success");
-                // collor, message, icon
-                swal({
-                    title: "Success!",
-                    text: res.data.message,
-                    icon: "success",
-                  });
-                history.push('/');
-            }
-            else{
-                //validation_errors also from backend
-                setRegister({...registerInput, error_list: res.data.validation_errors});
-            }
-            });
+        const res = await fetch(url + 'api/Auth/Register',{
+            method : 'Post',
+            headers : {'Content-Type' : 'application/json'},
+            body : JSON.stringify(registerInput),
+            credentials: 'include'
         });
+        const content = await res.json();
+        console.log(content);
     }
+
     return (
         <div>
             <div className="container py-5">

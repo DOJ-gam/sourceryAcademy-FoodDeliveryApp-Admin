@@ -63,7 +63,7 @@ export default function AddFood() {
         // cell5.innerHTML = "<button>Edit</button>";
         // cell6.innerHTML = "<button>Delete</button>";
         // history.push('/category');
-        // window.location.reload();
+         window.location.reload();
       }
       // else if (res.data.status === 400){
       //   // alert('no')

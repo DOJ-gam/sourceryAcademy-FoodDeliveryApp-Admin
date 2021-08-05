@@ -7,6 +7,10 @@ import swal from "sweetalert";
 
 function AddProduct() {
 
+  let url = process.env.NODE_ENV === "development"?
+  process.env.REACT_APP_DEVELOPMENT_URL : 
+  process.env.REACT_APP_PRODUCTION_URL;
+
   const [CategoryList, setCategoryList] = useState([]);
   const [ErrorList, setError] = useState([]);
 
@@ -39,11 +43,14 @@ function AddProduct() {
   }
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/all-category`).then(res => {
-      if(res.data.status === 200){
-        // console.log(res.data.category);
-        setCategoryList(res.data.category);
+    axios.get(url + 'Categories').then(res => {
+//      console.log(res)
+      if(res.status === 200){
+         //console.log(res);
+        setCategoryList(res.data);
+        //console.log(CategoryList)
       }
+     
     });
   }, [])
 
@@ -189,13 +196,25 @@ function AddProduct() {
                   </select>
                   <small className="text-danger">{ErrorList.category_id}</small>
                 </div>
-                <div className="form-group mb-3 card-body">
+                {/* <div className="form-group mb-3 card-body">
                   <label htmlFor="slug">Slug</label>
                   <input
                     type="text"
                     className="form-control"
                     id="slug"
                     name="slug"
+                    onChange={handleInput}
+                    value={productInput.slug}
+                  />
+                  <small className="text-danger">{ErrorList.slug}</small>
+                </div> */}
+                <div className="form-group mb-3 card-body">
+                  <label htmlFor="slug">image</label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    id="image"
+                    name="image"
                     onChange={handleInput}
                     value={productInput.slug}
                   />
@@ -209,7 +228,7 @@ function AddProduct() {
                     id="name"
                     name="name"
                     onChange={handleInput}
-                    value={productInput.name}
+                    value={productInput.image}
                   />
                   <small className="text-danger">{ErrorList.name}</small>
                 </div>

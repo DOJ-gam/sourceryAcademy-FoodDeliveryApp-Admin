@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Home from "./components/home/Home";
@@ -25,7 +25,8 @@ import {
 
 import "./App.css";
 
-axios.defaults.baseURL = "http://127.0.0.1:8000";
+
+axios.defaults.baseURL = "http://localhost:300";
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['content-type'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -36,6 +37,27 @@ axios.interceptors.request.use(function(config){
 });
 
 function App() {
+
+  const[name, setName]= useState('');
+
+  let url = process.env.NODE_ENV === "development"?
+        process.env.REACT_APP_DEVELOPMENT_URL : 
+        process.env.REACT_APP_PRODUCTION_URL;
+
+        const getUser = async () => {
+          let res = await fetch(url + 'Auth/user',{
+            headers : {'content-type' : 'application/json'},
+            credentials: 'include',
+          })
+          let content = await res.json();
+          setName(content.name);
+          console.log(name);
+        } 
+
+  useEffect(()=>{
+    getUser();
+  });
+
   // let location = useLocation;
   // if (location.pathname === '/register'){
   //   return( <div className="App">
@@ -49,17 +71,21 @@ function App() {
   // }
   return (
     <div className="App pr-5">
+       
       <Router>
+      
         <Switch>
+         
+           
           {/* <Route path="/register">
             <Register />
           </Route>
           <Route path="/login">
             <Login />
           </Route> */}
-          {/* <Route path="/register">
-            {localStorage.getItem('auth_token') ? <Redirect to="/"/> : <Register/>}
-          </Route> */}
+           <Route path="/register">
+            {name ? <Redirect to="/"/> : <Register/>}
+          </Route> 
             <Route path="/403">
             <Page403/>
           </Route>
@@ -69,12 +95,14 @@ function App() {
           <AdminPrivateRoute path="/register" name="Admin"/>
 
           <Route path="/login" >
-            {localStorage.getItem('auth_token') ? <Redirect to="/"/> : <Login/>}
+          {localStorage.getItem('auth_token') ? <Redirect to="/"/> : <Login/>}
           </Route>
+          {/* {name ? : <Redirect to='/login' />} */}
           <div className="auth-routes">
             <Topbar />
             <div className="container-doj">
               <Sidebar />
+              {/* name ? */}
               <Route exact path="/">
                 <Home />
               </Route>
@@ -93,12 +121,14 @@ function App() {
               <Route path="/addfood">
                 <AddProduct />
               </Route>
-              
+               {/* : <Redirect to="/login" />  */}
             </div>
           </div>
-
+             
         </Switch>
+        
       </Router>
+      
     </div>
   );
 }
