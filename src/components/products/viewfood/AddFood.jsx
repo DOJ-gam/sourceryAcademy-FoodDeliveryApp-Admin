@@ -24,7 +24,7 @@ export default function AddFood() {
             <option value="chickem">Chickem</option>
           </select>
         </div>
-        <button className="btn btn-info btn-block">Add</button>
+        <button className="btn btn-info btn-block bg-success">Add</button>
       </form>
     </div>
   );

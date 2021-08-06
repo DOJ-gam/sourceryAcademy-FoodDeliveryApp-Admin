@@ -49,17 +49,23 @@ export default function Topbar() {
   }
   
   return (
-    <div className="topbar">
+    <div className="topbar mb-4" >
       <div className="topbarWrapper">
-        <div className="topLeft">
+        <div className="topLeft  ">
           <span className="logo">
             {/* <img
               src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_The_Gambia.svg"
               alt=""
               className="topAvatar"
             /> */}
-            <FastfoodIcon fontSize="large" />
+            <FastfoodIcon  fontSize="large" />
+            
           </span>
+          <h3 className="text-danger fw-bold fs-1 ls-2 ">
+                        Senegambia
+                        <span className="text-success ms-2">Foodie</span>
+                    </h3>
+         
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">

@@ -348,7 +348,7 @@ function AddProduct() {
                       type="checkbox"
                       name="status"
                       id="status"
-                      className="w-75 h-50"
+                      // className="w-75 h-50"
                       onChange={handleInput}
                       value={productInput.status}
                     />
