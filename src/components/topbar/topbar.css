@@ -20,8 +20,12 @@
 .logo {
   font-weight: bold;
   font-size: 30px;
-  color: darkblue;
+  color:  #00B74A;
   cursor: pointer;
+}
+.topLeft{
+  display: flex;
+  justify-content: flex-start;
 }
 
 .topRight{

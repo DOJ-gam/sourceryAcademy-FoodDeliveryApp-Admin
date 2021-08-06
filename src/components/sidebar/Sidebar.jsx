@@ -18,9 +18,9 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar bg-dark">
       <div className="sidebarWrapper">
-        <div className="sidebarMenu">
+        <div className="sidebarMenu ">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
             <Link to="/" className="link-doj">
@@ -71,12 +71,13 @@ export default function Sidebar() {
             </Link>
             <div className="collapse" id="collapsseProducts" aria-labelledby="HeadingOne" data-parent="sidenavAccordion">
               <nav className="sb-sidenav-menu-nested d-flex flex-column">
-                <Link className="pl-5 link-doj" to="/addfood">Add Food</Link>
+                <Link className="pl-5 link-doj  " 
+                 to="/addfood">Add Food</Link>
                 <Link className="pl-5 link-doj" to="/viewfood">Show food</Link>
               </nav>
             </div>
 
-            <li className="sidebarListItem">
+            <li className="sidebarListItem ">
               <BarChart className="sidebarIcon" />
               Reports
             </li>
@@ -99,7 +100,7 @@ export default function Sidebar() {
             </li>
           </ul>
         </div>
-        <div className="sidebarMenu">
+        <div className="sidebarMenu mb-4">
           <h3 className="sidebarTitle">Staff</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
@@ -110,7 +111,7 @@ export default function Sidebar() {
               <Timeline className="sidebarIcon" />
               Analytics
             </li>
-            <li className="sidebarListItem">
+            <li className="sidebarListItem mb-4">
               <Report className="sidebarIcon" />
               Reports
             </li>

@@ -9,18 +9,18 @@ export default function Orders() {
       <form className="">
         <div className="form-group">
           <label>Name</label>
-          <input type="text" placeholder="Restaurant Name" className="form-control" />
+          <input type="text" placeholder="Restaurant Name" className="form-control " autoFocus />
         </div>
         <div className="form-group">
           <label>Address</label>
-          <input type="text" placeholder="Restaurant Address" className="form-control" />
+          <input type="text" placeholder="Restaurant Address" className="form-control" autoFocus />
         </div>
         <div className="form-group">
           <label>Contact</label>
-          <input type="text" placeholder="Restaurant Contact" className="form-control" />
+          <input type="text" placeholder="Restaurant Contact" className="form-control" autoFocus />
         </div>
         
-        <button className="btn btn-info btn-block">Add</button>
+        <button className="btn btn-info btn-block bg-success">Add</button>
       </form>
 
         <div className="border-bottom border-danger mt-5 mb-5"></div>
@@ -44,7 +44,7 @@ export default function Orders() {
             <td>Senegambia</td>
             <td>3888009</td>
             <td>
-                <button className="btn btn-warning d-inline-block mr-2">Edit</button>
+                <button className="btn btn-success d-inline-block mr-2">Edit</button>
                 <button className="btn btn-danger d-inline-block mr-2">Delete</button>
             </td>
           </tr>
@@ -54,7 +54,7 @@ export default function Orders() {
             <td>Senegambia</td>
             <td>3888009</td>
             <td>
-                <button className="btn btn-warning d-inline-block mr-2">Edit</button>
+                <button className="btn btn-success d-inline-block mr-2">Edit</button>
                 <button className="btn btn-danger d-inline-block mr-2">Delete</button>
             </td>
           </tr>
@@ -64,7 +64,7 @@ export default function Orders() {
             <td>Senegambia</td>
             <td>3888009</td>
             <td>
-                <button className="btn btn-warning d-inline-block mr-2">Edit</button>
+                <button className="btn btn-success d-inline-block mr-2">Edit</button>
                 <button className="btn btn-danger d-inline-block mr-2">Delete</button>
             </td>
           </tr>
@@ -74,7 +74,7 @@ export default function Orders() {
             <td>Senegambia</td>
             <td>3888009</td>
             <td >
-                <button className="btn btn-warning d-inline-block mr-2">Edit</button>
+                <button className="btn btn-success d-inline-block mr-2">Edit</button>
                 <button className="btn btn-danger d-inline-block mr-2">Delete</button>
             </td>
           </tr>
