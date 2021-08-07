@@ -1,0 +1,64 @@
+
+.card{
+    border-radius: 20px;
+    width: 400px;
+    
+}
+
+.input-text{
+    position: relative;
+    background: none;
+    color: #000;
+}
+.input-text input{
+    width:100%;
+    padding: 10px 4px;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    outline: none;
+    background: none;
+}
+
+.input-text label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    transition: .5s;
+    background: none;
+}
+
+.btn-submit{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.input-text input:focus{
+
+    border-bottom: 1px solid red;
+    border-right: 1px solid white;
+    border-left: none;  
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding-top: 14px;
+    padding-bottom: 0;
+    background: none;
+    
+}
+.input-text input:focus ~ label,
+.input-text input:valid ~ label
+{
+    top:-28px;
+    left: 0;
+    color:#000;
+    font-size: 15px;
+    background: none;
+}

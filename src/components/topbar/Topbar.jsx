@@ -27,7 +27,7 @@ export default function Topbar() {
         <li className="nav-item">
           <Link>
            <div className="dropdown-menu mr-5 float-left text-center" aria-labelledby="dropdownMenuLink">
-              <h3 className="border-bottom py-3">Not A USER</h3>
+              <h3 className="border-bottom ">Not A USER</h3>
               <a className="dropdown-item" href="/">
                 Login
               </a>

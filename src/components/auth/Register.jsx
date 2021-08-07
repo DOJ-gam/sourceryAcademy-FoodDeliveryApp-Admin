@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
+import "./register.css";
 
 function Register() {
   let url =
@@ -73,63 +74,69 @@ function Register() {
 
   return (
     <div>
-      <div className="container py-5">
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="card">
-              <div className="card-header">
+      <div className="container py-5 ">
+        <div className="row  d-flex justify-content-center ">
+        
+          <div className="col-md-6 d-flex justify-content-center">
+            
+            <div className="card " style={{  background:"#ab9998"}}>
+              <div className="card-header  d-flex justify-content-center">
                 <h4>Register</h4>
               </div>
               <div className="card-body">
-                <form onSubmit={registerSubmit}>
-                  <div className="form-group mb3">
-                    <label htmlFor="name">Full Name</label>
+                <form onSubmit={registerSubmit}>  
+                  <div className="form-group input-text ">
                     <input
                       type="text"
                       onChange={handleInput}
-                      value={registerInput.name}
-                      className="form-control"
+                      value={registerInput.name}                     
                       name="name"
                       id="name"
+                      required=""
+                      style={{background:"none"}}
                     />
+                    <label htmlFor="name">Full Name</label>
+                    
                     <span className=" alert-danger d-inline-block my-1 w-100 text-danger">
                       {registerInput.error_list.name}
                     </span>
                   </div>
-                  <div className="form-group mb3">
-                    <label htmlFor="email">Email ID</label>
-                    <input
+                  <div className="form-group input-text ">
+                  <input
                       type="email"
                       onChange={handleInput}
                       value={registerInput.email}
-                      className="form-control"
+                     required=""
                       name="email"
                       id="email"
                     />
+                    <label htmlFor="email">Email ID</label>
+                    
                     <span className=" alert-danger d-inline-block my-1 w-100 text-danger">
                       {registerInput.error_list.email}
                     </span>
                   </div>
-                  <div className="form-group mb3">
-                    <label htmlFor="password">Password</label>
-                    <input
+                  <div className="form-group input-text ">
+                  <input
                       type="password"
                       onChange={handleInput}
-                      value={registerInput.password}
-                      className="form-control"
+                      value={registerInput.password}                      
                       name="password"
                       id="password"
+                      required=""
                     />
+                    <label htmlFor="password">Password</label>
+                   
                     <span className=" alert-danger d-inline-block my-1 w-100 text-danger">
                       {registerInput.error_list.password}
                     </span>
                   </div>
-                  {/* <div className="form-group mb3">
+                  {/* <div className="form-group input-text mb3">
                                         <label htmlFor="confirm_password">Confirm Password</label>
                                         <input type="password" onChange={handleInput} value={registerInput.confirm_passwordpassword} className="form-control" name="confirm_password" id="confirm_password" />
                                     </div> */}
                   <div className="form-group mb3">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary btn-submit">
                       Register
                     </button>
                   </div>

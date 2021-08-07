@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Redirect, useHistory } from "react-router-dom";
 import swal from "sweetalert";
+import "./login.css";
 
 //handleInput is called everytime chage is made...
 // setting values entered to the variable in state..s
@@ -98,38 +99,39 @@ function Login() {
 
   return (
     <div>
-      <div className="container py-5">
+      <div className="container py-5 ">
         <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="card">
-              <div className="card-header">
+          <div className="col-md-6 d-flex justify-content-center">
+            <div className="card " style={{  background:"#d6d6d6"}}>
+              <div className="card-header d-flex justify-content-center ">
                 <h4>Login</h4>
               </div>
               <div className="card-body">
                 <form onSubmit={loginSubmit}>
-                  <div className="form-group mb3">
+                  <div className="form-group mb2 input-text">
                     <label htmlFor="email">Email ID</label>
                     <input
                       type="email"
                       onChange={handleInput}
                       value={loginInput.email}
-                      className="form-control"
                       name="email"
                       id="email"
+                      required=""
                     />
                     <span className=" alert-danger d-inline-block my-1 w-100 text-danger">
                       {loginInput.error_list.email}
                     </span>
                   </div>
-                  <div className="form-group mb3">
+                  <div className="form-group mb2 border-radius rounded top input-text">
                     <label htmlFor="password">Password</label>
                     <input
                       type="password"
                       onChange={handleInput}
                       value={loginInput.password}
-                      className="form-control"
+                      className="border-top-0"
                       name="password"
                       id="password"
+                      required=" "
                     />
                     <span className=" alert-danger d-inline-block my-1 w-100 text-danger">
                       {loginInput.error_list.password}
